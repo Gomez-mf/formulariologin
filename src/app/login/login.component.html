@@ -1,0 +1,14 @@
+<h1>Login de alumno</h1>
+<form [formGroup]="loginForm">
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" formControlName="email" [class.is-invalid] = "emailInvalid">
+      <small *ngIf="emailInvalid" class="text-danger">Debe ingresar un correo electronico válido</small>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Password</label>
+      <input type="password" class="form-control" formControlName="password" [class.is-invalid] = "emailInvalid">
+      <small  *ngIf="passwordInvalid" class="text-danger">Ingrese una contraseña con el mínimo de 6 caracteres</small>
+    </div>
+    <button [disabled]="loginForm.invalid" type="submit" class="my-3">Entrar</button>
+  </form>
